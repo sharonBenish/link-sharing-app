@@ -1,4 +1,4 @@
-import Login from '@/views/auth/login.vue'
+import Login from '../views/auth/login.vue'
 import Signup from '@/views/auth/signup.vue'
 import Dashboard from '@/views/dashboard.vue'
 import { createRouter, createWebHistory } from 'vue-router'
