@@ -1,28 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
 @import './base.css';
 @import 'tailwindcss';
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+  display: block;
+  /* max-width: 1280px; */
+  /* margin: 0 auto; */
+  /* padding: 2rem; */
+  font-family: "Instrument Sans", serif;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+@theme {
+  --color-light-grey: hsl(0, 0%, 98%);
+  --color-purple: hsl(252, 100%, 62%);
+  --color-purple-hover: hsl(252, 100%, 84%);
+  --color-light-purple: hsl(252, 100%, 96%);
+  --color-dark-grey: hsl(0, 0%, 20%);
+  --color-grey: hsl( 0, 0%, 45%);
+  --color-borders: hsl(0, 0%, 85%);
+  --color-red: hsl(0, 100%, 61%)
 }
 
-@media (hover: hover) {
+a{
+  @apply text-purple hover:text-purple-hover
+}
+
+/* @media (hover: hover) {
   a:hover {
     background-color: hsla(160, 100%, 37%, 0.2);
   }
-}
+} */
 
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
   body {
     display: flex;
     place-items: center;
@@ -33,4 +42,4 @@ a,
     grid-template-columns: 1fr 1fr;
     padding: 0 2rem;
   }
-}
+} */

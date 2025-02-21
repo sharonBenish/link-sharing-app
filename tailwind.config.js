@@ -4,6 +4,9 @@ module.exports = {
     theme: {
       extend: {
         colors: {
+            e:{
+              'primary': '#12e' 
+            },
             'light-grey': 'hsl(0, 0%, 98%)',
             'purple': 'hsl(252, 100%, 62%)',
             'purple-hover': 'hsl(252, 100%, 84%)',
