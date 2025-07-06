@@ -1,5 +1,5 @@
-import login from '../views/auth/login.vue'
-import signup from '@/views/auth/signup.vue'
+import login from '../views/auth/templogin.vue'
+import signin from '@/views/auth/tempsignin.vue'
 import dashboard from '@/views/dashboard.vue'
 import preview from '@/views/preview.vue'
 import { createRouter, createWebHistory } from 'vue-router'
@@ -15,7 +15,7 @@ const router = createRouter({
     {
       path: '/auth/signup',
       name: 'signup',
-      component: signup
+      component: signin
     },
     {
       path: '/',
