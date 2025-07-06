@@ -12,7 +12,8 @@ import LinkedIn from '@/components/Icons/LinkedIn.vue';
 import StackOverflow from '@/components/Icons/StackOverflow.vue';
 import Twitch from '@/components/Icons/Twitch.vue';
 import Twitter from '@/components/Icons/Twitter.vue';
-import YouTube from '@/components/Icons/YouTube.vue';import { computed, ref } from 'vue';
+import YouTube from '@/components/Icons/YouTube.vue';
+import { computed, ref } from 'vue';
 
 const props = defineProps<{
   number: number,

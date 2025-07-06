@@ -1,6 +1,7 @@
 import Login from '../views/auth/login.vue'
 import Signup from '@/views/auth/signup.vue'
 import Dashboard from '@/views/dashboard.vue'
+import Preview from '@/views/preview.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 // import HomeView from '../views/HomeView.vue'
 
@@ -21,6 +22,11 @@ const router = createRouter({
       path: '/',
       name: 'dashboard',
       component: Dashboard
+    },
+    {
+      path: '/preview',
+      name: 'preview',
+      component: Preview
     }
     // {
     //   path: '/about',
