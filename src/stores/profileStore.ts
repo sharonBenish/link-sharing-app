@@ -1,20 +1,10 @@
+import type { Link } from "@/types/link";
+import type { ProfileDetails } from "@/types/profile";
 import { defineStore } from "pinia";
-
-type Link = {
-    name: string
-    link: string
-}
-
-type ProfileDetails = {
-    profileImage: File | null
-    firstName: string
-    lastName: string
-    email: string
-}
 
 export const useProfileStore = defineStore('profileStore', {
     state: () =>({
-        profileImage: null as File | null,
+        profileImage: null as File | null | undefined | string,
         firstName: '',
         lastName: '',
         email: '',
