@@ -133,7 +133,7 @@ const imagePreview = ref()
 
 onMounted(()=>{
     if (profileImage){
-        imagePreview.value = URL.createObjectURL(profileImage)
+        imagePreview.value = URL.createObjectURL(profileImage as File)
     }
 })
 </script>
@@ -151,9 +151,9 @@ onMounted(()=>{
                     <img v-if="profileImage" :src="imagePreview" class="h-30 w-30 rounded-full" />
                     <p>{{ firstName }}  {{ lastName }}</p>
                     <p>{{ email }}</p>
-                    <div v-for="link in links" class="h-12 w-100 flex text-sm gap-4 rounded-lg px-4 items-center text-white mt-4" :class="getBg(link.name)">
-                        <component :is="getIcon(link.name)" :class="link.name === 'Frontend Mentor'? 'text-dark-grey!': 'text-white!'" />
-                        <p>{{ link.name }}</p>
+                    <div v-for="link in links" class="h-12 w-100 flex text-sm gap-4 rounded-lg px-4 items-center text-white mt-4" :class="getBg(link.title)">
+                        <component :is="getIcon(link.title)" :class="link.title === 'Frontend Mentor'? 'text-dark-grey!': 'text-white!'" />
+                        <p>{{ link.title }}</p>
                     </div>
                  </div>
                  <p v-else>This person doesn't have anything to show!</p>

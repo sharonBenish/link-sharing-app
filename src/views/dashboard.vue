@@ -191,9 +191,9 @@ const getBg = ((name: string)=>{
 const profileDetailsRef = ref()
 function saveProfileDetails(){
     const isValid = profileDetailsRef.value.validateForm()
-    if (isValid){
-        saveDetails(profileDetails.value, links.value)
-    }
+    // if (isValid){
+    //     saveDetails(profileDetails.value, links.value)
+    // }
 }
 </script>
 
