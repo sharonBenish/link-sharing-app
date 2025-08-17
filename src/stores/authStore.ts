@@ -15,10 +15,11 @@ export const useAuthStore = defineStore('authStore', {
         // Define actions related to authentication here
         async login(credentials:Credentials) {
             try {
-                const response = await api.post('/auth/login', credentials);
+                const response = await api.post('api/auth/signin', credentials);
                 this.accessToken = response.data.accessToken;
                 this.refreshToken = response.data.refreshToken;
                 localStorage.setItem('accessToken', this.accessToken as string);
+                localStorage.setItem('refreshToken', this.refreshToken as string);
                 return response;
             } catch (error) {
                 console.error('Login failed:', error);
@@ -27,9 +28,10 @@ export const useAuthStore = defineStore('authStore', {
         },
         async refreshAccessToken(){
             try{
-                const response = await api.post('/auth/refresh-token', this.refreshToken);
+                const response = await api.post('api/auth/refresh-token', this.refreshToken);
                 this.accessToken = response.data.accessToken;
                 localStorage.setItem('accessToken', this.accessToken as string);
+                localStorage.setItem('refreshToken', this.refreshToken as string);
             } catch (error) {
                 console.error('Error refreshing token:', error);
                 throw error;
@@ -38,12 +40,13 @@ export const useAuthStore = defineStore('authStore', {
 
         async logOut () {
             try{
-                const response = await api.post('/auth/logout', this.refreshToken);
+                const response = await api.post('api/auth/logout', this.refreshToken);
                 console.log('Logout successful:', response);
                 this.accessToken = null;
                 this.refreshToken = null;
                 this.user = null;
                 localStorage.removeItem('accessToken');
+                localStorage.removeItem('refreshToken');
             } catch (error) {
                 console.error('Error logging out:', error);
             }

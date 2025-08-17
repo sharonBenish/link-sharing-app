@@ -10,6 +10,7 @@ const password = ref('');
 const authStore = useAuthStore();
 
 const login = async () => {
+    console.log('Attempting to log in with:', email.value, password.value);
     const credentials = {
         email: email.value,
         password: password.value
@@ -35,7 +36,7 @@ const login = async () => {
                 <img src="/src/assets/images/logo-devlinks-large.svg" />
             </div>
 
-            <form @submit="login" class="bg-white rounded-md py-8 px-12 min-w-[500px]">
+            <form @submit.prevent="login" class="bg-white rounded-md py-8 px-12 min-w-[500px]">
                 <h1 class="text-3xl font-[600] mb-4">Login</h1>
                 <p class="text-grey font-light">Add your details below to get back into the app</p>
 
