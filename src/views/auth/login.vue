@@ -20,7 +20,7 @@ const login = async () => {
         if (res) {
             console.log('Login successful:', res);
             // Redirect to the home page or dashboard after successful login
-            router.push('/dashboard'); // Adjust the route as necessary
+            router.push('/'); // Adjust the route as necessary
         }
     } catch (error) {
         console.error('Login failed:', error);
